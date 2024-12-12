@@ -7,6 +7,10 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/vcs.xml
+.idea/misc.xml
+.idea/compiler.xml
+.idea/encodings.xml
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -87,3 +91,4 @@ fabric.properties
 /dist/
 /nbdist/
 /.nb-gradle/
+
