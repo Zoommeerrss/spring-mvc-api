@@ -18,14 +18,14 @@ This is a Springboot project builded using Openliberty
 * liberty-maven-plugin
 * maven-ear-plugin
 
-## Openliberty Files
+## Openliberty
 
 * server.env
 * server.xml
 * persistence.xml
 * Version 24.0.9 of Liberty Tools for IntelliJ IDEA 
 
-## Env Var
+## Environment Variables
 
 * LOGGER_JSON_FORMAT=false (if true the log is generated like JSON format otherwise PLAIN/TEXT)
 

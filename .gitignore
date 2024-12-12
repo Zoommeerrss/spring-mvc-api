@@ -92,3 +92,5 @@ fabric.properties
 /nbdist/
 /.nb-gradle/
 
+.project
+/.idea/
