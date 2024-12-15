@@ -3,60 +3,71 @@ package com.javatpoint.presentation.entrypoint;
 import com.javatpoint.domain.converter.PersonConverter;
 import com.javatpoint.domain.service.PersonService;
 import com.javatpoint.presentation.api.request.PersonRequest;
+import com.javatpoint.presentation.api.response.Data;
+import com.javatpoint.presentation.api.response.PersonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1/springmvc/people")
+@RequestMapping("/api/v1/passengers")
 public class PersonController {
 
     @Autowired
     private PersonService service;
 
     @GetMapping(value = "/counter", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getPersonTotal() {
+    public ResponseEntity<Data<Long>> getPersonTotal() {
+
+		long count = 0L;
 
         try {
-            System.out.println("Person Counter: " + service.count());
+			count = service.count();
+            System.out.println("Person Counter: " + count);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        return new ResponseEntity<>("Counted data", HttpStatus.OK);
+        return new ResponseEntity<>(new Data<>(count), HttpStatus.OK);
     }
 
 	@GetMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getPersonList() {
+	public ResponseEntity<Data<List<PersonResponse>>> getPersonList() {
 
+		List<PersonResponse> list = null;
 		try {
-			System.out.println("Person list: " + service.findAll()
+
+			list = service.findAll()
 					.stream()
 					.map(PersonConverter::toResponse)
-					.collect(Collectors.toList()));
+					.collect(Collectors.toList());
+			System.out.println("Person list: " + list);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return new ResponseEntity<>("Listed data", HttpStatus.OK);
+		return new ResponseEntity<>(new Data<>(list), HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> save(@RequestBody PersonRequest request) {
+	public ResponseEntity<Data<PersonResponse>> save(@RequestBody PersonRequest request) {
 
+		PersonResponse response = null;
 		try {
-			System.out.println("Person saved: " + service.save(request));
+			response = PersonConverter.toResponse(service.save(request));
+			System.out.println("Person saved: " + response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return new ResponseEntity<>("Saved data", HttpStatus.CREATED);
+		return new ResponseEntity<>(new Data<>(response), HttpStatus.CREATED);
 	}
 }

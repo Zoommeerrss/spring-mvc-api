@@ -31,5 +31,5 @@ This is a Springboot project builded using Openliberty
 
 ## Openapi
 
-* default endpoint: http://localhost:5050/swagger-ui/index.html
-* docs endpoint: http://localhost:5050/v3/api-docs
+* default endpoint: http://localhost:5050/passenger-trip/swagger-ui/index.html
+* docs endpoint: http://localhost:5050/passenger-trip/v3/api-docs

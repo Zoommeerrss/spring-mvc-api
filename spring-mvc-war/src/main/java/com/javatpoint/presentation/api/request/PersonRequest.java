@@ -1,6 +1,7 @@
 package com.javatpoint.presentation.api.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 @AllArgsConstructor
@@ -10,6 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+@Schema(name = "PersonRequest", description = "Request object")
 public class PersonRequest {
 
     @JsonProperty("name")
