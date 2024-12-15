@@ -1,7 +1,6 @@
 package com.javatpoint.presentation.api.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 @AllArgsConstructor
@@ -9,7 +8,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Schema(name = "Data", description = "Data generic object")
 public class Data<T> {
 
     @JsonProperty("data")

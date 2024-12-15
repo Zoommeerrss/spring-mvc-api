@@ -54,7 +54,7 @@
                      <uri>spring-mvc-war</uri>
                      <!-- Set custom context root -->
                      <!-- tag::contextRoot[] -->
-                     <contextRoot>spring-mvc-war</contextRoot>
+                     <contextRoot>/</contextRoot>
                      <!-- end::contextRoot[] -->
                      
                   </webModule>

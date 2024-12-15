@@ -29,3 +29,7 @@ This is a Springboot project builded using Openliberty
 
 * LOGGER_JSON_FORMAT=false (if true the log is generated like JSON format otherwise PLAIN/TEXT)
 
+## Openapi
+
+* default endpoint: http://localhost:5050/swagger-ui/index.html
+* docs endpoint: http://localhost:5050/v3/api-docs

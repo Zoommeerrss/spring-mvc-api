@@ -43,7 +43,11 @@ database:
 # Log settings (INFO, ERROR, DEBUG)
 logging:
   level:
-    root: DEBUG
+    root: INFO
+    org:
+      hibernate:
+        type: INFO   #For prepared statements
+        SQL: INFO
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
 

@@ -3,6 +3,7 @@ package com.javatpoint.configuration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan(basePackages = {
@@ -14,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         "com.javatpoint.domain.service",
         "com.javatpoint.domain.service.impl",
 })
-@EnableJpaRepositories
+@EnableWebMvc
 public class AppConfig {
 
 }
