@@ -94,3 +94,5 @@ fabric.properties
 
 .project
 /.idea/
+/spring-mvc-ear/.libertyls/ol-24.0.0.12.xsd
+/spring-mvc-ear/.libertyls/schemagen.log
